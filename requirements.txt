@@ -1,0 +1,28 @@
+# ──────────────────────────────────────────────────────────────
+# PremiumIQ — dependencies
+# Python 3.11+ required (pandas 3.x dropped support for older versions)
+# ──────────────────────────────────────────────────────────────
+
+# ── Core ML stack ─────────────────────────────────────────────
+# MUST be pinned exactly: insurance_model.pkl was serialized with
+# scikit-learn 1.9.0. Pickles are not guaranteed to load across versions.
+scikit-learn==1.9.0
+# Dataframe handling, encoding (get_dummies), binning (cut/qcut).
+pandas>=3.0
+# Numerical backbone required by scikit-learn and pandas.
+numpy>=2.0
+# Pearson correlation and chi-square test used in feature selection.
+scipy>=1.13
+# Fast, reliable (de)serialization of the model and column schema.
+joblib>=1.4
+
+# ── Web app ───────────────────────────────────────────────────
+# Interactive front-end for live predictions (app.py).
+streamlit>=1.40
+
+# ── Notebook / EDA ────────────────────────────────────────────
+# Plotting for histograms, box plots and the correlation heatmap.
+matplotlib>=3.9
+seaborn>=0.13
+# Runs insurance_prediction.ipynb end to end.
+jupyter
