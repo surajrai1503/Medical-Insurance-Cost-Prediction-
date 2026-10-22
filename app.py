@@ -1,5 +1,5 @@
 from pathlib import Path
-import joblib as jb
+import joblib 
 import pandas as pd
 import streamlit as st
 
@@ -8,8 +8,8 @@ st.set_page_config(page_title="PremiumIQ", page_icon="🩺", layout="centered")
 BASE = Path(__file__).parent
 @st.cache_resource
 def load_arti():
-    col = jb.load(BASE /"columns.pkl")
-    mod = jb.load(BASE /"insurance_model.pkl")
+    col = joblib.load(BASE /"columns.pkl")
+    mod = joblib.load(BASE /"insurance_model.pkl")
     return col ,mod
 
 expected_columns ,model = load_arti()
